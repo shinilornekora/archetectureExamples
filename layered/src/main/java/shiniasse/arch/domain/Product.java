@@ -69,7 +69,7 @@ public class Product {
     public String toString() {
         return (
             this.getName() + " - " + this.getAmount() + " штук(а)" + NEW_LINE +
-            this.getExpirationDate().toString() + " срок годности (до)" + NEW_LINE +
+            this.getExpirationDate().toString() + " - срок годности (до)" + NEW_LINE +
             this.getCriticalThreshold() + " - критическое количество" + NEW_LINE +
             this.getOptimalAmount() + " - нормальное количество" + NEW_LINE +
             this.getTemperatureMode() + " - температурный режим" + NEW_LINE

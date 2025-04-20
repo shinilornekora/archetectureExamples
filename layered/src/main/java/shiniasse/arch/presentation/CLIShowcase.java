@@ -46,9 +46,9 @@ public class CLIShowcase {
             case 1 -> makePrettyAddingMenu();
             case 2 -> cookMenu();
             case 3 -> this.inventoryService.removeOutdatedProducts(INV_NAME);
-            case 4 -> this.inventoryService.makeProductsInventorizationWithAutoCorrection(INV_NAME);
-            case 5 -> this.inventoryService.makeCurrentProductsDocs(INV_NAME);
-            case 6 -> this.inventoryService.getCritThresholdOfProductAmount(INV_NAME);
+            case 4 -> System.out.println(this.inventoryService.makeProductsInventorizationWithAutoCorrection(INV_NAME));
+            case 5 -> System.out.println(this.inventoryService.makeCurrentProductsDocs(INV_NAME));
+            case 6 -> System.out.println(this.inventoryService.getCritThresholdOfProductAmount(INV_NAME));
             case 0 -> System.out.println("Выход из программы...");
             default -> System.out.println("Неверный выбор. Попробуйте снова.");
         }
