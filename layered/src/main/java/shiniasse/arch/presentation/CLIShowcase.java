@@ -104,11 +104,62 @@ public class CLIShowcase {
         int dishVariant = Integer.parseInt(scanner.nextLine());
 
         switch (dishVariant) {
-            case 1 -> {}
-            case 2 -> {}
-            case 3 -> {}
+            case 1 -> cookPerlovka();
+            case 2 -> cookGrechka();
+            case 3 -> cookManka();
             default -> System.out.println("Тогда не будем готовить!");
         }
 
+    }
+
+    private void cookPerlovka() {
+        final Map<String, Product> products = new HashMap<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime expiryDateTime = LocalDateTime.parse("2024-03-15 11:15", formatter);
+        final Product product_1 = new Product(
+            "Перловка",
+            12,
+            expiryDateTime,
+            TemperatureMode.FROZEN,
+            5,
+            15
+        );
+
+        products.put(product_1.getName(), product_1);
+        this.inventoryService.cookDish(products, INV_NAME);
+    }
+
+    private void cookGrechka() {
+        final Map<String, Product> products = new HashMap<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime expiryDateTime = LocalDateTime.parse("2024-03-15 11:15", formatter);
+        final Product product_2 = new Product(
+            "Гречка",
+            4,
+            expiryDateTime,
+            TemperatureMode.FROZEN,
+            1,
+            5
+        );
+        
+        products.put(product_2.getName(), product_2);
+        this.inventoryService.cookDish(products, INV_NAME);
+    }
+
+    private void cookManka() {
+        final Map<String, Product> products = new HashMap<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime expiryDateTime = LocalDateTime.parse("2024-03-15 11:15", formatter);
+        final Product product_3 = new Product(
+            "Манка",
+            5,
+            expiryDateTime,
+            TemperatureMode.FROZEN,
+            4,
+            7
+        );
+
+        products.put(product_3.getName(), product_3);
+        this.inventoryService.cookDish(products, INV_NAME);
     }
 }
