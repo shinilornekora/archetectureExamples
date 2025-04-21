@@ -1,0 +1,15 @@
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\adapter\primary\console\ConsoleOrderManagementUI.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\adapter\secondary\InMemoryDeliveryRepository.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\adapter\secondary\InMemoryProductsRepository.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\adapter\secondary\InMemorySupplyOrderRepository.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\model\Delivery\Delivery.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\model\Delivery\RealProductItem.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\model\SupplyOrder\ProductAbstractItem.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\model\SupplyOrder\SupplyOrder.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\model\SupplyOrder\SupplyOrderStatus.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\port\primary\OrderProcessingSystem.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\port\secondary\DeliveryRepository.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\port\secondary\ProductsRepository.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\port\secondary\SupplyOrderRepository.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\domain\service\OrderProcessingSystemService.java
+C:\Users\Shinasse\Desktop\arch\ports_and_adapters\src\main\java\shiniasse\arch\Main.java
