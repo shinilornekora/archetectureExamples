@@ -1,0 +1,1 @@
+Тут храним агрегаты, value-objects, entities.
