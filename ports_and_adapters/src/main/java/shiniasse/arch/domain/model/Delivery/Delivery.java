@@ -2,6 +2,7 @@ package shiniasse.arch.domain.model.Delivery;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Delivery {
     private final String id;
@@ -34,5 +35,15 @@ public class Delivery {
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return (
+            "ID продукта - " + this.getId() + "\n" +
+            "ID заказа - " + this.getSupplyOrderId() + "\n" +
+            "-- Продукты в доставке -- \n" + this.getRealProductItems().stream()
+                .map(RealProductItem::toString).collect(Collectors.joining("\n")) + "\n" 
+        );
     }
 }

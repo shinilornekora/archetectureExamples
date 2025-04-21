@@ -2,6 +2,7 @@ package shiniasse.arch.domain.model.SupplyOrder;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SupplyOrder {
     private final List<ProductAbstractItem> supplyOrderItems;
@@ -44,5 +45,16 @@ public class SupplyOrder {
 
     public SupplyOrderStatus getSupplyOrderStatus() {
         return supplyOrderStatus;
+    }
+
+    @Override
+    public String toString() {
+        return (
+            "ID заказа - " + this.getId() + "\n" +
+            "Статус заказа - " + this.getSupplyOrderStatus() + "\n" +
+            "Дата создания заказа - " + this.getCreatedAt().toString() + "\n" +
+            "-- Продукты в заказе -- \n" + this.getSupplyOrderItems().stream()
+                .map(ProductAbstractItem::toString).collect(Collectors.joining("\n")) + "\n" 
+        );
     }
 }

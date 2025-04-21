@@ -28,12 +28,17 @@ public class ProductAbstractItem {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return name + " (" + price + " руб.)";
-    }
-
     public int getQuantity() {
         return quantity;
+    }
+
+    @Override
+    public String toString() {
+        return (
+            "ID продукта - " + this.getId() + "\n" +
+            "Имя продукта - " + this.getName() + "\n" +
+            "Цена продукта - " + this.getPrice() + "\n" +
+            "Количество продукта - " + this.getQuantity() + "\n"
+        );
     }
 }

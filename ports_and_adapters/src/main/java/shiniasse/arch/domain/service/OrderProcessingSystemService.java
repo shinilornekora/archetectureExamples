@@ -3,6 +3,7 @@ package shiniasse.arch.domain.service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import shiniasse.arch.domain.model.Delivery.Delivery;
 import shiniasse.arch.domain.model.Delivery.RealProductItem;
@@ -87,5 +88,26 @@ public class OrderProcessingSystemService implements OrderProcessingSystem {
 
         // Он уже Delivered, поэтому меняем на последнее - Canceled.
         supplyOrder.getSupplyOrderStatus();
+    }
+
+    @Override
+    public String getAllSupplyOrders() {
+        return supplyOrderRepository.findAll().stream()
+            .map(SupplyOrder::toString)
+            .collect(Collectors.joining("\n"));
+    }
+
+    @Override
+    public String getAllDeliveries() {
+        return deliveryRepository.findAll().stream()
+        .map(Delivery::toString)
+        .collect(Collectors.joining("\n"));
+    }
+
+    @Override
+    public String getAllProducts() {
+        return productsRepository.findAll().stream()
+        .map(RealProductItem::toString)
+        .collect(Collectors.joining("\n"));
     }
 }

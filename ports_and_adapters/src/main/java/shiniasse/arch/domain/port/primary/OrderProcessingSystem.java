@@ -12,6 +12,9 @@ public interface OrderProcessingSystem {
     public void confirmOrder(String supplyOrderId);
     public SupplyOrderStatus getOrderStatus(String supplyOrderId);
     public void getSuppliesWithQualityCheck(String deliveryId);
+    public String getAllSupplyOrders();
+    public String getAllDeliveries();
+    public String getAllProducts();
 
     // Вызывается только внутри.
     // К примеру, когда есть проблема с качеством.

@@ -6,12 +6,14 @@ public class RealProductItem {
     private final String id;
     private final String name;
     private final double price;
+    private final double quantity;
     private final LocalDateTime expirationDateTime;
 
-    public RealProductItem(String id, String name, double price, LocalDateTime expirationDateTime) {
+    public RealProductItem(String id, String name, double price, double quantity, LocalDateTime expirationDateTime) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.quantity = quantity;
         this.expirationDateTime = expirationDateTime;
     }
 
@@ -27,12 +29,22 @@ public class RealProductItem {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return name + " (" + price + " руб.)";
+    public double getQuantity() {
+        return quantity;
     }
 
     public LocalDateTime getExpirationDateTime() {
         return expirationDateTime;
+    }
+
+    @Override
+    public String toString() {
+        return (
+            "ID продукта - " + this.getId() + "\n" +
+            "Имя продукта - " + this.getName() + "\n" +
+            "Цена продукта" + this.getPrice() + "\n" +
+            "Количество продукта - " + this.getQuantity() + "\n" +
+            "Срок годности (до) - " + this.getExpirationDateTime().toString() + "\n"
+        );
     }
 }
