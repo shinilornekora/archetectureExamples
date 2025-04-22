@@ -77,8 +77,12 @@ public class OrderProcessingSystemService implements OrderProcessingSystem {
 
         supplyOrder.changeSupplyOrderStatus();
 
+        final boolean isGoodProducts = delivery.checkProductsQuality();
+
+        System.out.println("Продукты в доставке проверяются, статус - " + isGoodProducts);
+
         // Иначе ничего не делаем, наш заказ в статусе Delivered
-        if (!delivery.checkProductsQuality()) {
+        if (!isGoodProducts) {
             this.processSupplyOrderRejection(delivery);
         }
     }
@@ -89,8 +93,10 @@ public class OrderProcessingSystemService implements OrderProcessingSystem {
     public void processSupplyOrderRejection(Delivery delivery) {
         final SupplyOrder supplyOrder = supplyOrderRepository.findById(delivery.getSupplyOrderId()).orElseThrow();
 
+        System.out.println("Внимание, обнаружен просроченный продукт. Доставка отменена.");
+
         // Он уже Delivered, поэтому меняем на последнее - Canceled.
-        supplyOrder.getSupplyOrderStatus();
+        supplyOrder.changeSupplyOrderStatus();
     }
 
     @Override

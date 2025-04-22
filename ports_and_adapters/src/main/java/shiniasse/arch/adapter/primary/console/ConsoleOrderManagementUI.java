@@ -111,7 +111,7 @@ public class ConsoleOrderManagementUI {
     }
 
     private void handleDeliveryProcessing() {
-        System.out.println("Введите айди заказа: ");
+        System.out.println("Введите айди доставки: ");
         final String supplyOrderId = scanner.nextLine();
 
         this.orderProcessingSystem.getSuppliesWithQualityCheck(supplyOrderId);
