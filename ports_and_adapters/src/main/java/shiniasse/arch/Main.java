@@ -12,22 +12,25 @@ import shiniasse.arch.domain.service.OrderProcessingSystemService;
 
 public class Main {
     public static void main(String[] args) {
-        // Определить исходящие адаптеры
+        // ?????????? ????????? ????????
         DeliveryRepository deliveryRepository = new InMemoryDeliveryRepository();
         ProductsRepository productsRepository = new InMemoryProductsRepository();
         SupplyOrderRepository supplyOrderRepository = new InMemorySupplyOrderRepository();
 
-        // Инициализируем юзкейсер
+        // ?????? ???????? ????????
+        productsRepository.populateWithTestData();
+
+        // ?????????????? ????????
         OrderProcessingSystem orderProcessingSystem = new OrderProcessingSystemService(
             supplyOrderRepository, 
             deliveryRepository, 
             productsRepository
         );
         
-        // Определяем входящий адаптер
+        // ?????????? ???????? ???????
         ConsoleOrderManagementUI ui = new ConsoleOrderManagementUI(orderProcessingSystem);
 
-        // Ну и запускаем CLI
+        // ?? ? ????????? CLI
         ui.start();
     }
 }

@@ -9,4 +9,5 @@ public interface ProductsRepository {
     void save(RealProductItem realProductItem);
     Optional<RealProductItem> findById(String id);
     List<RealProductItem> findAll();
+    void populateWithTestData();
 }

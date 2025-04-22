@@ -35,7 +35,6 @@ public class ProductAbstractItem {
     @Override
     public String toString() {
         return (
-            "ID продукта - " + this.getId() + "\n" +
             "Имя продукта - " + this.getName() + "\n" +
             "Цена продукта - " + this.getPrice() + "\n" +
             "Количество продукта - " + this.getQuantity() + "\n"

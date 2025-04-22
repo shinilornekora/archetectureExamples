@@ -1,6 +1,5 @@
 package shiniasse.arch.adapter.primary.console;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -60,8 +59,6 @@ public class ConsoleOrderManagementUI {
         final List<ProductAbstractItem> productAbstractItems = new ArrayList<>();
 
         do {
-            final LocalDateTime currentTS = LocalDateTime.now();
-
             System.out.println("Итак, новый продукт, имя: ");
             final String name = scanner.nextLine();
             System.out.println("Количество продукта: ");
@@ -69,8 +66,11 @@ public class ConsoleOrderManagementUI {
             System.out.println("Цена продукта: ");
             final int price = scanner.nextInt();
 
+            // Очищаем буфер ввода
+            scanner.nextLine();
+
             ProductAbstractItem productAbstractItem = new ProductAbstractItem(
-                currentTS.toString() + name, 
+                name,
                 name, 
                 price, 
                 amount
@@ -81,7 +81,7 @@ public class ConsoleOrderManagementUI {
             System.out.println("Еще нужны продукты? (Y/N)");
             final String decision = scanner.nextLine();
 
-            if ("Y".equals(decision)) {
+            if (!"Y".equals(decision)) {
                 break;
             }
         } while (true);

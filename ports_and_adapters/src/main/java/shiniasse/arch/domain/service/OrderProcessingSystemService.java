@@ -49,7 +49,7 @@ public class OrderProcessingSystemService implements OrderProcessingSystem {
         final List<RealProductItem> realProductItems = new ArrayList<>();
 
         for (ProductAbstractItem product : products) {
-            final RealProductItem realProduct = productsRepository.findById(product.getId()).orElseThrow();
+            final RealProductItem realProduct = productsRepository.findById(product.getName()).orElseThrow();
             realProductItems.add(realProduct);
         }
 
@@ -73,6 +73,9 @@ public class OrderProcessingSystemService implements OrderProcessingSystem {
     @Override
     public void getSuppliesWithQualityCheck(String deliveryId) {
         final Delivery delivery = deliveryRepository.findById(deliveryId).orElseThrow();
+        final SupplyOrder supplyOrder = supplyOrderRepository.findById(delivery.getSupplyOrderId()).orElseThrow();
+
+        supplyOrder.changeSupplyOrderStatus();
 
         // Иначе ничего не делаем, наш заказ в статусе Delivered
         if (!delivery.checkProductsQuality()) {

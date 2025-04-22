@@ -40,7 +40,7 @@ public class Delivery {
     @Override
     public String toString() {
         return (
-            "ID продукта - " + this.getId() + "\n" +
+            "ID доставки - " + this.getId() + "\n" +
             "ID заказа - " + this.getSupplyOrderId() + "\n" +
             "-- Продукты в доставке -- \n" + this.getRealProductItems().stream()
                 .map(RealProductItem::toString).collect(Collectors.joining("\n")) + "\n" 

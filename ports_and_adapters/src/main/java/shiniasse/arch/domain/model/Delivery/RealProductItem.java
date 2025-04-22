@@ -42,7 +42,7 @@ public class RealProductItem {
         return (
             "ID продукта - " + this.getId() + "\n" +
             "Имя продукта - " + this.getName() + "\n" +
-            "Цена продукта" + this.getPrice() + "\n" +
+            "Цена продукта - " + this.getPrice() + "\n" +
             "Количество продукта - " + this.getQuantity() + "\n" +
             "Срок годности (до) - " + this.getExpirationDateTime().toString() + "\n"
         );
